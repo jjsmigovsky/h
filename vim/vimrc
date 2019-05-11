@@ -1,0 +1,47 @@
+set nobackup
+set noswapfile
+set number
+set nowrap
+set linebreak
+set smartindent
+set clipboard=unnamed
+set softtabstop=2 shiftwidth=2 expandtab
+set wildmenu
+set incsearch
+set hlsearch
+
+" color blue
+" color darkblue
+" color default
+" color delek
+" color desert
+" color elflord
+" color evening
+" color koehler
+" color morning
+" color murphy
+" color pablo
+" color peachpuff
+" color ron
+" color shine
+color slate
+" color torte
+" color zellner
+
+execute pathogen#infect()
+
+" Highlight all unwanted whitespace in red  
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * let w:m1=matchadd('ExtraWhitespace', '\s\+$', -1)
+
+" Highlight all emdashes [–] in red
+highlight Emdash ctermbg=red guibg=red
+autocmd BufWinEnter * let w:m2=matchadd('Emdash', '–\+', -1)
+
+" Highlight all tabs [	] in blue
+highlight TabChar ctermbg=black guibg=black
+autocmd BufWinEnter * let w:m3=matchadd('TabChar', '\t\+', -1)
+
+" Highlight all TODO in yellow
+highlight ToDo ctermbg=yellow guibg=yellow
+autocmd BufWinEnter * let w:m4=matchadd('ToDo', 'TODO', -1)
